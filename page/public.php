@@ -8,16 +8,17 @@
 <body>
 <form action="../gestion/login.php" method="post">
     <?php if(isset($error)){include('errorlogin.php');}?>
-    <div class="form-group">
-        <label for="login">Login</label>
-        <input type="text" class="form-control" id="login" name="login" aria-describedby="loginHelp" placeholder="Enter Login" value="">
-        <small id="loginHelp" class="form-text text-muted">Login admin needed</small>
+    <div class="form" align="center">
+        <div class="form">
+            <label for="login">Login</label>
+            <input style="width: 200px;" type="text" class="form-control" id="login" name="login" aria-describedby="loginHelp" placeholder="Enter Login" value="">
+        </div>
+        <div class="form">
+            <label for="mpd">Password</label>
+            <input style="width: 200px;" type="password" class="form-control" name="mdp" placeholder="Password" value="">
+        </div>
     </div>
-    <div class="form-group">
-        <label for="mpd">Password</label>
-        <input type="password" class="form-control" name="mdp" placeholder="Password" value="">
-    </div>
-    <button type="submit" class="btn btn-primary" name="connexion">Connexion</button>
+    <button style="display: block;margin : auto;" type="submit" class="btn btn-primary" name="connexion">Connexion</button>
 </form>
 </body>
 </html>
