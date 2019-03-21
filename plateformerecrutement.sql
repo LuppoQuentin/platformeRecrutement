@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  ven. 15 mars 2019 à 14:25
+-- Généré le :  jeu. 21 mars 2019 à 15:17
 -- Version du serveur :  5.7.24
 -- Version de PHP :  7.2.14
 
@@ -21,6 +21,27 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `plateformerecrutement`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `admin`
+--
+
+DROP TABLE IF EXISTS `admin`;
+CREATE TABLE IF NOT EXISTS `admin` (
+  `ID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `LOGIN` varchar(20) NOT NULL,
+  `MDP` varchar(200) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `admin`
+--
+
+INSERT INTO `admin` (`ID`, `LOGIN`, `MDP`) VALUES
+(1, 'qluppo', '11!11!96Ql');
 
 -- --------------------------------------------------------
 
@@ -58,12 +79,19 @@ CREATE TABLE IF NOT EXISTS `competence` (
 DROP TABLE IF EXISTS `compte`;
 CREATE TABLE IF NOT EXISTS `compte` (
   `ID_COMPTE` int(11) NOT NULL AUTO_INCREMENT,
-  `EMAIL` varchar(25) NOT NULL,
   `LOGIN` varchar(15) NOT NULL,
   `MOT_DE_PASSE` varchar(15) NOT NULL,
+  `EMAIL` varchar(50) NOT NULL,
   `DATE_CREATION` date NOT NULL,
   PRIMARY KEY (`ID_COMPTE`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `compte`
+--
+
+INSERT INTO `compte` (`ID_COMPTE`, `LOGIN`, `MOT_DE_PASSE`, `EMAIL`, `DATE_CREATION`) VALUES
+(26, 'qluppo', '11!11!96Ql', 'quentin.luppo.auditeur@lecnam.net', '2019-03-21');
 
 -- --------------------------------------------------------
 
