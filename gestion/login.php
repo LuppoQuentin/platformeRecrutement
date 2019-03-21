@@ -12,7 +12,7 @@ $result = $request->fetch();
 
 
 if ($result != null ) {
-   include('./../page/prive.php');
+    header('location:./../page/prive.php');
 }
 else
 {

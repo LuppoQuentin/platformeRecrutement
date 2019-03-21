@@ -36,6 +36,26 @@ class CompteManagement
         $q->execute();
     }
 
+    public function getCompte($id, compte $newObject) {
+        $q = $this->_db->prepare('SELECT * FROM compte where ID_COMPTE =  :id');
+        $q->bindValue(':id',$id);
+        $data = $q->execute();
+        while($data = $q->fetch()) {
+             $newObject->getCompte($data);
+        }
+        return $newObject;
+    }
+
+    public function updateCompte(compte $mCompte) {
+        $q = $this->_db->prepare('UPDATE compte SET LOGIN = :login, MOT_DE_PASSE = :mdp, EMAIL = :mail, DATE_CREATION= :datecrea WHERE ID_COMPTE = :id');
+        $q->bindValue(':id',$mCompte->getId());
+        $q->bindValue(':login', $mCompte->getLogin());
+        $q->bindValue(':mdp', $mCompte->getMdp());
+        $q->bindValue(':mail', $mCompte->getMail());
+        $date = DateTime::createFromFormat("d/m/Y", $mCompte->getDate());
+        $q->bindValue(':datecrea', $date->format('Y-m-d'));
+        $data = $q->execute();
+    }
 
 
 

@@ -22,6 +22,14 @@ class Compte
         $this->setDate();
     }
 
+    public function  getCompte(array $mCompte) {
+        $this->id=$mCompte['ID_COMPTE'];
+        $this->login=$mCompte['LOGIN'];
+        $this->mdp=$mCompte['MOT_DE_PASSE'];
+        $this->mail=$mCompte['EMAIL'];
+        $this->datecrea=$mCompte['DATE_CREATION'];
+    }
+
     public function getId(){
         return $this->id;
     }

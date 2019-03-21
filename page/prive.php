@@ -4,6 +4,7 @@
     <?php include($path.'/templates/head.php') ; ?>
     <meta charset="UTF-8">
     <title>Page Login</title>
+    <base href="http://localhost/test/admin/">
 </head>
 <?php
 // Connexion à la base.
@@ -34,13 +35,13 @@ $data = $request->execute();
 		<td><?php echo $data['MOT_DE_PASSE']; ?></td>
 		<td><?php echo $data['DATE_CREATION']; ?></td>
 		<td>
-			<form method="post" action="../compte/modifCompte.php">
-				<input type="hidden" name="id_compte" value="<?php echo $data['ID_COMPTE']; ?>"><input type="submit" value="Modifier" id="Modifier" />
+			<form method="post" action="./page/modifComptePage.php">
+				<input type="hidden" name="ID_COMPTE" value="<?php echo $data['ID_COMPTE']; ?>"><input type="submit" value="Modifier" id="Modifier" />
 			</form>
 		</td>
 		<td>
-			<form method="post" action="../compte/deleteCompte.php">
-				<input type="hidden" name="id_compte" value="<?php echo $data['ID_COMPTE']; ?>"><input type="submit" value="Supprimer" id="Supprimer" />
+			<form method="post" action="./gestion/compte/deleteCompte.php">
+				<input type="hidden" name="ID_COMPTE" value="<?php echo $data['ID_COMPTE']; ?>"><input type="submit" value="Supprimer" id="Supprimer" />
 			</form>
 		</td>
 	<?php
@@ -51,7 +52,7 @@ $data = $request->execute();
     </table>
 </table class="table">
     <body>
-        <form method="post" action="../compte/insertCompte.php">
+        <form method="post" action="./gestion/compte/insertCompte.php">
             <table>
                 <tr><td>Email : </td><td><input type="text" name="email"/></td></tr>
                 <tr><td>Login : </td><td><input name="login"/></td><td>Minimum 3 Caractère</td></tr>
