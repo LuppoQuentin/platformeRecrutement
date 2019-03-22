@@ -9,5 +9,5 @@ include('../../templates/config.php');
 include_once('../../class/Compte.php');
 include_once('../../class/CompteManagement.php');
 $base = new CompteManagement($db);
-$base->delete($_POST['id_compte']);
+$base->delete($_POST['ID_COMPTE']);
 include('../../page/prive.php');
