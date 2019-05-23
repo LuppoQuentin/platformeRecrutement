@@ -15,17 +15,16 @@ if(isset($errorInsert)){
 else{
     include($path.'/../../templates/config.php');
 }
-$request = $db->prepare("select * from compte");
+$request = $db->prepare("select * from entreprise");
 $data = $request->execute();
 ?>
 	<table class="table">
 		<caption>Liste des comptes</caption>
 		<thead>
 			<tr>
-				<th>Email</th>
-				<th>Login</th>
-				<th>password</th>
-				<th>Date_creation</th>
+				<th>Nom</th>
+				<th>Ville</th>
+				<th>nb_employe</th>
 			</tr>
 		</thead>
 	<tbody>
@@ -33,18 +32,17 @@ $data = $request->execute();
     while($data = $request->fetch()) {
 	    ?>
 	<tr>
-		<td><?php echo $data['EMAIL']; ?></td>
-		<td><?php echo $data['LOGIN']; ?></td>
-		<td><?php echo $data['MOT_DE_PASSE']; ?></td>
-		<td><?php echo $data['DATE_CREATION']; ?></td>
+		<td><?php echo $data['NOM']; ?></td>
+		<td><?php echo $data['VILLE']; ?></td>
+		<td><?php echo $data['NOMBRE_EMPLOYE']; ?></td>
 		<td>
-			<form method="post" action="./back_office/site/Compte/page/modifComptePage.php">
-				<input type="hidden" name="ID_COMPTE" value="<?php echo $data['ID_COMPTE']; ?>"><button style="display: block;" type="submit" class="btn btn-primary" name="modifer">Modifier</button>
+			<form method="post" action="./back_office/site/Entreprise/page/modifEntreprisePage.php">
+				<input type="hidden" name="ID_ENTREPRISE" value="<?php echo $data['ID_ENTREPRISE']; ?>"><button style="display: block;" type="submit" class="btn btn-primary" name="modifer">Modifier</button>
 			</form>
 		</td>
 		<td>
-			<form method="post" action="./back_office/gestion/compte/deleteCompte.php">
-				<input type="hidden" name="ID_COMPTE" value="<?php echo $data['ID_COMPTE']; ?>"><button style="display: block;" type="submit" class="btn btn-primary" name="supprimer">Supprimer</button>
+			<form method="post" action="./back_office/gestion/entreprise/deleteEntreprise.php">
+				<input type="hidden" name="ID_ENTREPRISE" value="<?php echo $data['ID_ENTREPRISE']; ?>"><button style="display: block;" type="submit" class="btn btn-primary" name="supprimer">Supprimer</button>
 			</form>
 		</td>
 	<?php
@@ -55,11 +53,11 @@ $data = $request->execute();
     </table>
 </table class="table">
     <body>
-        <form method="post" action="./back_office/gestion/compte/insertCompte.php">
+        <form method="post" action="./back_office/gestion/entreprise/insertEntreprise.php">
             <table>
-                <tr><td>Email : </td><td><input type="text" name="email"/></td></tr>
-                <tr><td>Login : </td><td><input name="login"/></td><td>Minimum 3 Caractère</td></tr>
-                <tr><td>Password : </td><td><input type="password" name="password" /></td><td>Minimum 8 Caractères (1maj, 1chiffre, 1caractere special)</td></tr>
+                <tr><td>Nom : </td><td><input type="text" name="nom"/></td></tr>
+                <tr><td>Ville : </td><td><input name="ville"/></td><td></td></tr>
+                <tr><td>Nb_employe : </td><td><input type="text" name="nb_employe" /></td><td></td></tr>
                 <tr><td>Saisir tous les champs</td><td><button style="display: block;" type="submit" class="btn btn-primary" name="submit">Valider</button><td></tr>
             </table>
         </form>

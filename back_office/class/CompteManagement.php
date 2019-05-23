@@ -23,7 +23,7 @@ class CompteManagement
     public function add(Compte $mCompte) {
         $q = $this->_db->prepare('INSERT INTO compte (LOGIN, MOT_DE_PASSE, EMAIL, DATE_CREATION) VALUES (:login, :mdp, :email, :datecrea)');
         $q->bindValue(':login', $mCompte->getLogin());
-        $q->bindValue(':mdp', hash('sha256',$mCompte->getMdp()));
+        $q->bindValue(':mdp',$mCompte->getMdp());
         $q->bindValue(':email', $mCompte->getMail());
         $q->bindValue(':datecrea', $mCompte->getDate());
 
@@ -50,7 +50,7 @@ class CompteManagement
         $q = $this->_db->prepare('UPDATE compte SET LOGIN = :login, MOT_DE_PASSE = :mdp, EMAIL = :mail, DATE_CREATION= :datecrea WHERE ID_COMPTE = :id');
         $q->bindValue(':id',$mCompte->getId());
         $q->bindValue(':login', $mCompte->getLogin());
-        $q->bindValue(':mdp',hash('sha256',$mCompte->getMdp()));
+        $q->bindValue(':mdp',$mCompte->getMdp());
         $q->bindValue(':mail', $mCompte->getMail());
         $date = DateTime::createFromFormat("d/m/Y", $mCompte->getDate());
         $q->bindValue(':datecrea', $date->format('Y-m-d'));

@@ -6,9 +6,9 @@
     <title>Page Login</title>
 </head>
 <body>
-<form action="../login/login.php" method="post">
+<form action="../gestion/login/login.php" method="post">
     <?php if(isset($error)){
-        include($path.'/site/errorlogin.php');}?>
+        include($path . '/site/error/errorlogin.php');}?>
     <div class="form" align="center">
         <div class="form">
             <label for="login">Login</label>

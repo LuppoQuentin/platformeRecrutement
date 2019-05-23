@@ -5,13 +5,12 @@
  * Date: 21/03/2019
  * Time: 22:54
  */
-$path = getcwd();
-include($path.'../../../templates/config.php');
-include_once($path.'../../../class/Compte.php');
-include_once($path.'../../../class/CompteManagement.php');
-$compte = new compte("","","");
-$compte->getCompte($_POST);
-$verif = $compte->verifObject();
+include('../../templates/config.php');
+include_once('../../class/Compte.php');
+include_once('../../class/CompteManagement.php');
+$entreprise = new compte("","","");
+$entreprise->getCompte($_POST);
+$verif = $entreprise->verifObject();
 foreach ($verif as $key => $value){
     if($verif[$key] != 1 ) {
         $errorInsert = 1;
@@ -19,10 +18,9 @@ foreach ($verif as $key => $value){
 }
 if(!isset($errorInsert)) {
     $base = new CompteManagement($db);
-    $base->updateCompte($compte);
-    echo $path;
+    $base->updateCompte($entreprise);
     header('location:  ../../site/Compte/page/prive.php');
 } else {
-    $_POST['ID_COMPTE']=$compte->getId();
-    include($path.'../../../site/modifComptePage.php');
+    $_POST['ID_COMPTE']=$entreprise->getId();
+    include('../../site/Compte/page/modifComptePage.php');
 }

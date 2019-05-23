@@ -5,10 +5,9 @@
  * Date: 15/03/2019
  * Time: 16:43
  */
-$path = getcwd();;
-include($path.'/../../templates/config.php');
-include_once($path.'/../../class/Compte.php');
-include_once($path.'/../../class/CompteManagement.php');
+include('../../templates/config.php');
+include_once('../../class/Compte.php');
+include_once('../../class/CompteManagement.php');
 $compte = new compte($_POST['login'],$_POST['password'],$_POST['email']);
 $verif = $compte->verifObject();
 foreach ($verif as $key => $value){
