@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
-<?php $path = dirname(__DIR__); include($path . '/templates/head.php'); ?>
+<?php $path = dirname(__DIR__); include($path . '/../../templates/head.php'); ?>
 <body>
 <div class="container">
     <div class="alert alert-danger alert-dismissible">

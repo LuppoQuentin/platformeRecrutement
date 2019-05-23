@@ -10,4 +10,4 @@ include_once('../../class/Compte.php');
 include_once('../../class/CompteManagement.php');
 $base = new CompteManagement($db);
 $base->delete($_POST['ID_COMPTE']);
-include('../../site/prive.php');
+include('../../site/Compte/page/prive.php');

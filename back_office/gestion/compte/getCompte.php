@@ -6,10 +6,10 @@
  * Time: 16:43
  */
 
-$path = $_SERVER["DOCUMENT_ROOT"];
-include($path.'/test/admin/templates/config.php');
-include_once($path.'/test/admin/class/Compte.php');
-include_once($path.'/test/admin/class/CompteManagement.php');
+$path = getcwd();
+include($path.'/../../../templates/config.php');
+include_once($path.'/../../../class/Compte.php');
+include_once($path.'/../../../class/CompteManagement.php');
 $base = new CompteManagement($db);
 $compte = new compte("","","");
 $compte = $base->getCompte($_POST['ID_COMPTE'],$compte);
