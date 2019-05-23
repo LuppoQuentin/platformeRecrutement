@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  jeu. 21 mars 2019 à 15:17
+-- Généré le :  jeu. 23 mai 2019 à 14:15
 -- Version du serveur :  5.7.24
 -- Version de PHP :  7.2.14
 
@@ -80,18 +80,18 @@ DROP TABLE IF EXISTS `compte`;
 CREATE TABLE IF NOT EXISTS `compte` (
   `ID_COMPTE` int(11) NOT NULL AUTO_INCREMENT,
   `LOGIN` varchar(15) NOT NULL,
-  `MOT_DE_PASSE` varchar(15) NOT NULL,
+  `MOT_DE_PASSE` varchar(200) NOT NULL,
   `EMAIL` varchar(50) NOT NULL,
   `DATE_CREATION` date NOT NULL,
   PRIMARY KEY (`ID_COMPTE`)
-) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=40 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `compte`
 --
 
 INSERT INTO `compte` (`ID_COMPTE`, `LOGIN`, `MOT_DE_PASSE`, `EMAIL`, `DATE_CREATION`) VALUES
-(26, 'qluppo', '11!11!96Ql', 'quentin.luppo.auditeur@lecnam.net', '2019-03-21');
+(38, 'qluppo', '11!11!96Ql', 'quentinluppo@orange.fr', '2019-05-23');
 
 -- --------------------------------------------------------
 

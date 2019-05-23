@@ -1,4 +1,4 @@
-<?php $title = 'Admin for Compte'; $path = dirname(__DIR__);?><!DOCTYPE html>
+<?php $title = 'Admin for Compte'; $path = dirname(__DIR__);$clecrypt="sha256"?><!DOCTYPE html>
 <html lang="fr">
 <head>
     <?php include($path . '/../../templates/head.php'); ?>
@@ -18,7 +18,6 @@ $data = $request->execute();
 		<caption>Liste des comptes</caption>
 		<thead>
 			<tr>
-				<th>Id</th>
 				<th>Email</th>
 				<th>Login</th>
 				<th>password</th>
@@ -30,7 +29,6 @@ $data = $request->execute();
     while($data = $request->fetch()) {
 	    ?>
 	<tr>
-		<td><?php echo $data['ID_COMPTE']; ?></td>
 		<td><?php echo $data['EMAIL']; ?></td>
 		<td><?php echo $data['LOGIN']; ?></td>
 		<td><?php echo $data['MOT_DE_PASSE']; ?></td>
