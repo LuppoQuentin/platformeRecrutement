@@ -12,7 +12,7 @@ $result = $request->fetch();
 
 
 if ($result != null ) {
-    header('location:./../page/prive.php');
+    header('location:./../page/page_pack_office/menu.php');
 }
 else
 {

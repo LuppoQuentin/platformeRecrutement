@@ -7,7 +7,8 @@
 </head>
 <body>
 <form action="../gestion/login.php" method="post">
-    <?php if(isset($error)){include('errorlogin.php');}?>
+    <?php if(isset($error)){
+        include('page_pack_office/error/errorlogin.php');}?>
     <div class="form" align="center">
         <div class="form">
             <label for="login">Login</label>

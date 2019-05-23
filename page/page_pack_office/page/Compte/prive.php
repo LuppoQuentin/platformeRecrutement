@@ -1,15 +1,16 @@
 <?php $title = 'Admin for Compte'; $path = dirname(__DIR__);?><!DOCTYPE html>
 <html lang="fr">
 <head>
-    <?php include($path.'/templates/head.php') ; ?>
+    <?php include($path . '/templates/head.php'); ?>
     <meta charset="UTF-8">
     <title>Page Login</title>
     <base href="http://localhost/test/admin/">
 </head>
 <?php
 // Connexion à la base.
-if(isset($errorInsert)){include($path.'/page/errorInsert.php');}
-include($path.'/templates/config.php');
+if(isset($errorInsert)){
+    include($path . '/page/errorInsert.php');}
+include($path . '/templates/config.php');
 $request = $db->prepare("select * from compte");
 $data = $request->execute();
 ?>
@@ -36,12 +37,13 @@ $data = $request->execute();
 		<td><?php echo $data['DATE_CREATION']; ?></td>
 		<td>
 			<form method="post" action="./page/modifComptePage.php">
-				<input type="hidden" name="ID_COMPTE" value="<?php echo $data['ID_COMPTE']; ?>"><input type="submit" value="Modifier" id="Modifier" />
+				<input style="width: 200px;" type="hidden" name="ID_COMPTE" value="<?php echo $data['ID_COMPTE']; ?>"/>
+                <input style="width: 200px;" value="Modifier" id="Modifier" />
 			</form>
 		</td>
 		<td>
 			<form method="post" action="./gestion/compte/deleteCompte.php">
-				<input type="hidden" name="ID_COMPTE" value="<?php echo $data['ID_COMPTE']; ?>"><input type="submit" value="Supprimer" id="Supprimer" />
+				<input style="width: 200px;" type="hidden" name="ID_COMPTE" value="<?php echo $data['ID_COMPTE']; ?>"><input type="submit" value="Supprimer" id="Supprimer" />
 			</form>
 		</td>
 	<?php
@@ -54,10 +56,10 @@ $data = $request->execute();
     <body>
         <form method="post" action="./gestion/compte/insertCompte.php">
             <table>
-                <tr><td>Email : </td><td><input type="text" name="email"/></td></tr>
-                <tr><td>Login : </td><td><input name="login"/></td><td>Minimum 3 Caractère</td></tr>
-                <tr><td>Password : </td><td><input type="password" name="password" /></td><td>Minimum 8 Caractères (1maj, 1chiffre, 1caractere special)</td></tr>
-                <tr><td>Saisir tous les champs</td><td><input type="submit" value="Valider" /><td></tr>
+                <tr><td>Email : </td><td><input style="width: 200px;" type="text" name="email"/></td></tr>
+                <tr><td>Login : </td><td><input style="width: 200px;" name="login"/></td><td>Minimum 3 Caractère</td></tr>
+                <tr><td>Password : </td><td><input style="w dth: 200px;"type="password" name="password" /></td><td>Minimum 8 Caractères (1maj, 1chiffre, 1caractere special)</td></tr>
+                <tr><td>Saisir tous les champs</td><td><input style="width: 200px;" type="submit" value="Valider" /><td></tr>
             </table>
         </form>
     </body>
