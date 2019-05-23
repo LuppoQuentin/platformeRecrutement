@@ -1,15 +1,16 @@
 <?php $title = 'Admin for Compte'; $path = dirname(__DIR__);?><!DOCTYPE html>
 <html lang="fr">
 <head>
-    <?php include($path.'/templates/head.php') ; ?>
+    <?php include($path . '/templates/head.php'); ?>
     <meta charset="UTF-8">
     <title>Page Login</title>
     <base href="http://localhost/test/admin/">
 </head>
 <?php
 // Connexion à la base.
-if(isset($errorInsert)){include($path.'/page/errorInsert.php');}
-include($path.'/templates/config.php');
+if(isset($errorInsert)){
+    include($path . '/page/errorInsert.php');}
+include($path . '/templates/config.php');
 $request = $db->prepare("select * from compte");
 $data = $request->execute();
 ?>

@@ -7,7 +7,8 @@
 </head>
 <body>
 <form action="../gestion/login.php" method="post">
-    <?php if(isset($error)){include('errorlogin.php');}?>
+    <?php if(isset($error)){
+        include('errorlogin.php');}?>
     <div class="form" align="center">
         <div class="form">
             <label for="login">Login</label>
