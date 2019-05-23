@@ -8,7 +8,11 @@
 <body>
 <form action="../gestion/login.php" method="post">
     <?php if(isset($error)){
+<<<<<<< HEAD:page/public.php
         include('page_pack_office/error/errorlogin.php');}?>
+=======
+        include('errorlogin.php');}?>
+>>>>>>> master:back_office/page/public.php
     <div class="form" align="center">
         <div class="form">
             <label for="login">Login</label>
