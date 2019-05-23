@@ -8,7 +8,7 @@
 </head>
 <?php
 include($path . '/test/admin/gestion/compte/getCompte.php');
-if(isset($errorInsert)){include($path.'/test/admin/page/errorInsert.php');}
+if(isset($errorInsert)){include($path.'/test/admin/site/errorInsert.php');}
 ?>
 
 <form method="POST" action="./gestion/compte/updateCompte.php">

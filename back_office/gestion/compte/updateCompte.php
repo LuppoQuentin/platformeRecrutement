@@ -20,8 +20,8 @@ foreach ($verif as $key => $value){
 if(!isset($errorInsert)) {
     $base = new CompteManagement($db);
     $base->updateCompte($compte);
-    header('location: http://localhost/test/admin/page/prive.php');
+    header('location: http://localhost/test/admin/site/prive.php');
 } else {
     $_POST['ID_COMPTE']=$compte->getId();
-    include($path.'/test/admin/page/modifComptePage.php');
+    include($path.'/test/admin/site/modifComptePage.php');
 }

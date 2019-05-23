@@ -12,10 +12,10 @@ $result = $request->fetch();
 
 
 if ($result != null ) {
-    header('location:./../page/page_pack_office/menu.php');
+    header('location:./../site/page_pack_office/menu.php');
 }
 else
 {
    $error = true;
-   include('./../page/public.php');
+   include('./../site/public.php');
 }

@@ -9,7 +9,7 @@
 <?php
 // Connexion à la base.
 if(isset($errorInsert)){
-    include($path . '/page/errorInsert.php');}
+    include($path . '/site/errorInsert.php');}
 include($path . '/templates/config.php');
 $request = $db->prepare("select * from compte");
 $data = $request->execute();
@@ -36,7 +36,7 @@ $data = $request->execute();
 		<td><?php echo $data['MOT_DE_PASSE']; ?></td>
 		<td><?php echo $data['DATE_CREATION']; ?></td>
 		<td>
-			<form method="post" action="./page/modifComptePage.php">
+			<form method="post" action="modifComptePage.php">
 				<input type="hidden" name="ID_COMPTE" value="<?php echo $data['ID_COMPTE']; ?>"><input type="submit" value="Modifier" id="Modifier" />
 			</form>
 		</td>

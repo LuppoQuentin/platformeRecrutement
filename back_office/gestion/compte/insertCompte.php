@@ -19,5 +19,5 @@ if(!isset($errorInsert)) {
     $base = new CompteManagement($db);
     $base->add($compte);
 }
-include('../../page/prive.php');
+include('../../site/prive.php');
 
