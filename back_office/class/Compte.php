@@ -86,6 +86,7 @@ class Compte
                 return false;
             }
         } else {
+            $this->mdp=crypt($this->mdp,"CRYPT_SHA256");
             return false;
         }
 

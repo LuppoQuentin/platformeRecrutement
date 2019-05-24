@@ -7,7 +7,7 @@
  */
 include('./../../templates/config.php');
 $request = $db->prepare('SELECT id FROM admin WHERE login = :login AND mdp = :mdp');
-$request->execute(array('login'=>$_POST['login'],'mdp'=>$_POST['mdp']));
+$request->execute(array('login'=>$_POST['login'],'mdp'=>crypt($_POST['mdp'],"CRYPT_SHA256")));
 $result = $request->fetch();
 
 

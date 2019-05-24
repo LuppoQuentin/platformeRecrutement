@@ -27,7 +27,7 @@ else {
         <input type="hidden" value="<?php $datecrea = DateTime::createFromFormat("Y-m-d", $compte->getDate()); echo $datecrea->format('d/m/Y'); ?>" name="DATE_CREATION"/>
 		<a> Login    : <input type="text" value="<?php echo $compte->getLogin(); ?>" id="login" name="LOGIN" /> Minimum 3 Caractères</a><br />
 		<a> Mail     : <input type="text" value="<?php echo $compte->getMail(); ?>" id="mail" name="EMAIL"/> </a><br />
-		<a> Password : <input type="text" value="<?php echo $compte->getMdp(); ?>" id="password" name="MOT_DE_PASSE"/> Minimum 8 Caractères (1maj, 1chiffre, 1caractere special)</a><br />
+		<a> Password : <input type="text" value="" id="password" name="MOT_DE_PASSE"/> Minimum 8 Caractères (1maj, 1chiffre, 1caractere special)</a><br />
         <button style="display: block;margin-left: 10px;" type="submit" class="btn btn-primary" name="submit">Valider</button>
 </form>
 <br />

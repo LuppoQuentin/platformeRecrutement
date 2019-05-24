@@ -23,7 +23,7 @@ class CompteManagement
     public function add(Compte $mCompte) {
         $q = $this->_db->prepare('INSERT INTO compte (LOGIN, MOT_DE_PASSE, EMAIL, DATE_CREATION) VALUES (:login, :mdp, :email, :datecrea)');
         $q->bindValue(':login', $mCompte->getLogin());
-        $q->bindValue(':mdp',$mCompte->getMdp());
+        $q->bindValue(':mdp',crypt($mCompte->getMdp(),"CRYPT_SHA256"));
         $q->bindValue(':email', $mCompte->getMail());
         $q->bindValue(':datecrea', $mCompte->getDate());
 
