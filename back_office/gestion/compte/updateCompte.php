@@ -8,9 +8,9 @@
 include('../../templates/config.php');
 include_once('../../class/Compte.php');
 include_once('../../class/CompteManagement.php');
-$entreprise = new compte("","","");
-$entreprise->getCompte($_POST);
-$verif = $entreprise->verifObject();
+$compte = new compte("","","");
+$compte->getCompte($_POST);
+$verif = $compte->verifObject();
 foreach ($verif as $key => $value){
     if($verif[$key] != 1 ) {
         $errorInsert = 1;
@@ -18,9 +18,9 @@ foreach ($verif as $key => $value){
 }
 if(!isset($errorInsert)) {
     $base = new CompteManagement($db);
-    $base->updateCompte($entreprise);
+    $base->updateCompte($compte);
     header('location:  ../../site/Compte/page/prive.php');
 } else {
-    $_POST['ID_COMPTE']=$entreprise->getId();
+    $_POST['ID_COMPTE']=$compte->getId();
     include('../../site/Compte/page/modifComptePage.php');
 }
