@@ -24,30 +24,25 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-7 mb-5"  data-aos="fade">
-
-            
-
-            <form action="#" class="p-5 bg-white">
-             
+            <form method="POST" action="gestion/compte/insertCompte.php" class="p-5 bg-white">
               <div class="row form-group">
-                
                 <div class="col-md-12">
                   <label class="text-black" for="email">Email</label> 
-                  <input type="email" id="email" class="form-control">
+                  <input type="email" id="email" nom="email" class="form-control">
+                </div>
+              </div>
+
+              <div class="row form-group">
+                <div class="col-md-12">
+                  <label class="text-black" for="login">Login</label> 
+                  <input type="login" id="login" nom="login" class="form-control">
                 </div>
               </div>
 
               <div class="row form-group">
                 <div class="col-md-12">
                   <label class="text-black" for="subject">Password</label> 
-                  <input type="password" id="subject" class="form-control">
-                </div>
-              </div>
-
-              <div class="row form-group">
-                <div class="col-md-12">
-                  <label class="text-black" for="subject">Confirm Password</label> 
-                  <input type="password" id="subject" class="form-control">
+                  <input type="password" id="password" nom="password" class="form-control">
                 </div>
               </div>
 
@@ -62,11 +57,8 @@
                   <input type="submit" value="Sign In" class="btn btn-primary py-2 px-4 text-white">
                 </div>
               </div>
-
-  
             </form>
           </div>
-          
         </div>
       </div>
     </div>
