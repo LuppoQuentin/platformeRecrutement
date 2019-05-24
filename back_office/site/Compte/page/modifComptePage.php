@@ -30,6 +30,13 @@ else {
         <button style="display: block;margin-left: 10px;" type="submit" class="btn btn-primary" name="submit">Valider</button>
 </form>
 <br />
-<form method="POST" action="./prive.php">
+<?php
+if(isset($errorInsert)){
+    echo '<form method="POST" action="../../site/Compte/page/prive.php">';
+}
+else{
+    echo '<form method="POST" action="./prive.php">';
+}
+?>
     <button style="display: block;margin-left: 10px;" type="submit" class="btn btn-primary" name="Retour">Retour</button>
-</form>
+</html>
