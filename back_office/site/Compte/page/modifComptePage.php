@@ -11,6 +11,7 @@
   ?>
     <meta charset="UTF-8">
     <title>Page Login</title>
+    <base href="http://localhost/plateformeRecrutement/back_office/">
 </head>
 <?php
 if(isset($errorInsert)){
@@ -21,7 +22,7 @@ else {
     include($path . '/../../../gestion/compte/getCompte.php');
 }
 ?>
-<form method="POST" action="../../../gestion/compte/updateCompte.php">
+<form method="POST" action="./gestion/compte/updateCompte.php">
 	    <input type="hidden" name="ID_COMPTE" value="<?php echo $compte->getId(); ?>">
         <input type="hidden" value="<?php $datecrea = DateTime::createFromFormat("Y-m-d", $compte->getDate()); echo $datecrea->format('d/m/Y'); ?>" name="DATE_CREATION"/>
 		<a> Login    : <input type="text" value="<?php echo $compte->getLogin(); ?>" id="login" name="LOGIN" /> Minimum 3 Caractères</a><br />
@@ -30,13 +31,6 @@ else {
         <button style="display: block;margin-left: 10px;" type="submit" class="btn btn-primary" name="submit">Valider</button>
 </form>
 <br />
-<?php
-if(isset($errorInsert)){
-    echo '<form method="POST" action="../../site/Compte/page/prive.php">';
-}
-else{
-    echo '<form method="POST" action="./prive.php">';
-}
-?>
+<form method="POST" action="./site/Compte/page/prive.php">
     <button style="display: block;margin-left: 10px;" type="submit" class="btn btn-primary" name="Retour">Retour</button>
 </html>

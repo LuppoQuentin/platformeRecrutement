@@ -4,6 +4,7 @@
     <?php include($path . '/../../templates/head.php'); ?>
     <meta charset="UTF-8">
     <title>Page Login</title>
+    <base href="http://localhost/plateformeRecrutement/back_office/">
 </head>
 <?php
 // Connexion à la base.
@@ -37,12 +38,12 @@ $data = $request->execute();
 		<td><?php echo $data['MOT_DE_PASSE']; ?></td>
 		<td><?php echo $data['DATE_CREATION']; ?></td>
 		<td>
-			<form method="post" action="../../../site/Compte/page/modifComptePage.php">
+			<form method="post" action="./site/Compte/page/modifComptePage.php">
 				<input type="hidden" name="ID_COMPTE" value="<?php echo $data['ID_COMPTE']; ?>"><button style="display: block;" type="submit" class="btn btn-primary" name="modifer">Modifier</button>
 			</form>
 		</td>
 		<td>
-			<form method="post" action="../../../gestion/compte/deleteCompte.php">
+			<form method="post" action="./gestion/compte/deleteCompte.php">
 				<input type="hidden" name="ID_COMPTE" value="<?php echo $data['ID_COMPTE']; ?>"><button style="display: block;" type="submit" class="btn btn-primary" name="supprimer">Supprimer</button>
 			</form>
 		</td>
@@ -54,7 +55,7 @@ $data = $request->execute();
     </table>
 </table class="table">
     <body>
-        <form method="post" action="../../../gestion/compte/insertCompte.php">
+        <form method="post" action="./gestion/compte/insertCompte.php">
             <table>
                 <tr><td>Email : </td><td><input type="text" name="email"/></td></tr>
                 <tr><td>Login : </td><td><input name="login"/></td><td>Minimum 3 Caractère</td></tr>
@@ -62,7 +63,7 @@ $data = $request->execute();
                 <tr><td>Saisir tous les champs</td><td><button style="display: block;" type="submit" class="btn btn-primary" name="submit">Valider</button><td></tr>
             </table>
         </form>
-        <form action="../../../site/menu.php" method="post">
+        <form action="./site/menu.php" method="post">
             <button style="float:right ;margin-right:20px;" type="submit" class="btn btn-primary" name="Menu">Retour menu</button>
         </form>
     </body>

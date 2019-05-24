@@ -5,7 +5,7 @@
  * Date: 15/03/2019
  * Time: 09:22
  */
-include('../../templates/config.php');
+include('./../../templates/config.php');
 $request = $db->prepare('SELECT id FROM admin WHERE login = :login AND mdp = :mdp');
 $request->execute(array('login'=>$_POST['login'],'mdp'=>$_POST['mdp']));
 $result = $request->fetch();

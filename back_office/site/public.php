@@ -4,9 +4,10 @@
     <?php include($path.'/templates/head.php'); ?>
     <meta charset="UTF-8">
     <title>Page Login</title>
+    <base href="http://localhost/plateformeRecrutement/back_office/">
 </head>
 <body>
-<form action="../gestion/login/login.php" method="post">
+<form action="./gestion/login/login.php" method="post">
     <?php if(isset($error)){
         include($path . '/site/error/errorlogin.php');}?>
     <div class="form" align="center">
