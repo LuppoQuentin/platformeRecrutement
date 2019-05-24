@@ -53,15 +53,25 @@ $data = $request->execute();
     ?>
     </tbody>
     </table>
-</table class="table">
     <body>
         <form method="post" action="./gestion/compte/insertCompte.php">
-            <table>
-                <tr><td>Email : </td><td><input type="text" name="email"/></td></tr>
-                <tr><td>Login : </td><td><input name="login"/></td><td>Minimum 3 Caractère</td></tr>
-                <tr><td>Password : </td><td><input type="password" name="password" /></td><td>Minimum 8 Caractères (1maj, 1chiffre, 1caractere special)</td></tr>
-                <tr><td>Saisir tous les champs</td><td><button style="display: block;" type="submit" class="btn btn-primary" name="submit">Valider</button><td></tr>
-            </table>
+                <div class="form" >
+                    <div class="form">
+                        <label for="email">Email :</label>
+                        <input style="width: 200px;" type="text" class="form-control" id="email" name="email" aria-describedby="loginHelp" placeholder="Enter Email" value="">
+                    </div>
+                    <div class="form">
+                        <label for="login">Login :</label>
+                        <input style="width: 200px;" type="password" class="form-control" name="login" placeholder="Enter Login" value=""><td>Minimum 3 Caractère</td>
+                    </div>
+                    <div class="form">
+                        <label for="login">Password :</label>
+                        <input style="width: 200px;" type="password" class="form-control" name="password" placeholder="Enter Password" value=""><td>Minimum 8 Caractères (1maj, 1chiffre, 1caractere special)</td>
+                    </div>
+                    <div class="form">
+                        <td>Saisir tous les champs</td><td><button style="display: block;" type="submit" class="btn btn-primary" name="submit">Valider</button><td>
+                    </div>
+                </div>
         </form>
         <form action="./site/menu.php" method="post">
             <button style="float:right ;margin-right:20px;" type="submit" class="btn btn-primary" name="Menu">Retour menu</button>
