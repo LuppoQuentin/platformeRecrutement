@@ -4,7 +4,7 @@
     <?php include($path . '/../../templates/head.php'); ?>
     <meta charset="UTF-8">
     <title>Page Login</title>
-    <base href="http://local/host/plateformeRecrutement/back_office/">
+    <base href="http://localhost/plateformeRecrutement/back_office/">
 </head>
 <?php
 // Connexion à la base.

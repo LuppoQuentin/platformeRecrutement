@@ -10,6 +10,13 @@ include($path.'/../../templates/config.php');
 include_once($path.'/../../class/Entreprise.php');
 include_once($path.'/../../class/EntrepriseManagement.php');
 $entreprise = new entreprise($_POST['nom'],$_POST['ville'],$_POST['nb_employe']);
+
+foreach ($verif as $key => $value){
+    if($verif[$key] != 1 ) {
+        $errorInsert = 1;
+    }
+}
+
 // mettre une erreur si il faut
 if(!isset($errorInsert)) {
     $base = new EntrepriseManagement($db);
