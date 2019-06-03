@@ -3,10 +3,16 @@
 <head>
     <?php
     if(isset($errorInsert)){
+        session_start();
         include($path.'/../../templates/head.php');
+        include($path . '/../../templates/connexion.php');
     }
     else {
-        include($path.'/../../../templates/head.php');
+        session_start();
+        include($path . '/../../../templates/head.php');
+        include($path . '/../../../templates/connexion.php');
+    }
+    ?>
     }
   ?>
     <meta charset="UTF-8">

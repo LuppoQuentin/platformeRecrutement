@@ -1,7 +1,11 @@
 <?php $title = 'Admin for Compte'; $path = dirname(__DIR__);$clecrypt="sha256"?><!DOCTYPE html>
 <html lang="fr">
 <head>
-    <?php include($path . '/../../templates/head.php'); ?>
+    <?php
+    session_start();
+    include($path . '/../../templates/head.php');
+    include($path . '/../../templates/connexion.php');
+    ?>
     <meta charset="UTF-8">
     <title>Page Login</title>
     <base href="http://localhost/plateformeRecrutement/back_office/">

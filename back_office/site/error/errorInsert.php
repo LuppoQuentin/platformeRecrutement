@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
-<?php $path = dirname(__DIR__); include($path . '/../templates/head.php'); ?>
+<?php $path = dirname(__DIR__);
+session_start();
+include($path . '/../templates/head.php');
+include($path . '/../templates/connexion.php');
+?>
 <body>
 <div class="container">
     <div class="alert alert-danger alert-dismissible">

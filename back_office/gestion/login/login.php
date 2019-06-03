@@ -12,7 +12,10 @@ $result = $request->fetch();
 
 
 if ($result != null ) {
+    session_start();
+    $_SESSION['status']=True;
     header('location:./../../site/menu.php');
+    exit();
 }
 else
 {
