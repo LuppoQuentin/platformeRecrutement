@@ -11,9 +11,9 @@ if (!isset($_SESSION['start']))
     $_SESSION['start']=True;
 }
 include('../../templates/connexion.php');
-include($path.'../../../templates/config.php');
-include_once($path.'../../../class/Entreprise.php');
-include_once($path.'../../../class/EntrepriseManagement.php');
+include('../../templates/config.php');
+include_once('../../class/Entreprise.php');
+include_once('../../class/EntrepriseManagement.php');
 $entreprise = new entreprise("","","");
 $entreprise->getEntreprise($_POST);
 $verif = $entreprise->verifObject();
@@ -32,5 +32,5 @@ if(!isset($errorInsert)) {
     exit();
 } else {
     $_POST['ID_ENTREPRISE']=$entreprise->getId();
-    include($path.'../../../site/modifEntreprisePage.php');
+    include('../../site/Entreprise/page/modifEntreprisePage.php');
 }

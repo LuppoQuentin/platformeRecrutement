@@ -45,6 +45,6 @@ else {
         <button style="display: block;margin-left: 10px;" type="submit" class="btn btn-primary" name="submit">Valider</button>
 </form>
 <br />
-<form method="POST" action="./site/Entreprise/page/entreprise.php">';
+<form method="POST" action="./site/Entreprise/page/entreprise.php">
     <button style="display: block;margin-left: 10px;" type="submit" class="btn btn-primary" name="Retour">Retour</button>
 </html>
