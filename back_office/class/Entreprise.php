@@ -20,25 +20,16 @@ class Entreprise
         $this->Nbemploye = $mNbEmploye;
     }
 
-    /**
-     * @return mixed
-     */
     public function getNom()
     {
         return $this->Nom;
     }
 
-    /**
-     * @return mixed
-     */
     public function getVille()
     {
         return $this->Ville;
     }
 
-    /**
-     * @return mixed
-     */
     public function getMNbEmploye()
     {
         return $this->Nbemploye;
@@ -54,6 +45,51 @@ class Entreprise
         $this->Nom=$mEntreprise['NOM'];
         $this->Ville=$mEntreprise['VILLE'];
         $this->Nbemploye=$mEntreprise['NOMBRE_EMPLOYE'];
+    }
+
+    public function verifNom()
+    {
+        if (strlen($this->Nom) < 3) {
+            return false;
+        }
+        return true;
+    }
+
+    public function verifVille()
+    {
+        if (strlen($this->Ville) < 3) {
+            return false;
+        }
+        return true;
+    }
+
+    public function verifNbEmploye()
+    {
+        if (($this->Nbemploye) < 1){
+            return false;
+        }
+        return true;
+    }
+
+    public function verifObject()
+    {
+        $valid = array(
+            'Nom' => "Problème avec le nom d'entreprise.",
+            'Ville' => "Problème avec le nom de la ville.",
+            'Nbemploye' => "Problème avec le nombre d'employé.",
+        );
+
+        if ($this->verifNom()) {
+            $valid['Nom'] = 1;
+        }
+        if ($this->verifVille()) {
+            $valid['Ville'] = 1;
+        }
+        if ($this->verifNbEmploye()) {
+            $valid['Nbemploye'] = 1;
+        }
+
+        return $valid;
     }
 
 }

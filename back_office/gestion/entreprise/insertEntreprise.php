@@ -6,11 +6,17 @@
  * Time: 16:43
  */
 $path = getcwd();;
+if (!isset($_SESSION['start']))
+{
+    session_start();
+    $_SESSION['start']=True;
+}
+include('../../templates/connexion.php');
 include($path.'/../../templates/config.php');
 include_once($path.'/../../class/Entreprise.php');
 include_once($path.'/../../class/EntrepriseManagement.php');
 $entreprise = new entreprise($_POST['nom'],$_POST['ville'],$_POST['nb_employe']);
-
+$verif = $entreprise->verifObject();
 foreach ($verif as $key => $value){
     if($verif[$key] != 1 ) {
         $errorInsert = 1;
