@@ -5,6 +5,12 @@
  * Date: 15/03/2019
  * Time: 16:43
  */
+if (!isset($_SESSION['start']))
+{
+    session_start();
+    $_SESSION['start']=True;
+}
+include('../../templates/connexion.php');
 include('../../templates/config.php');
 include_once('../../class/Compte.php');
 include_once('../../class/CompteManagement.php');

@@ -2,19 +2,25 @@
 <html lang="fr">
 <head>
     <?php
-    if(isset($errorInsert)){
+    if(isset($errorInsert)) {
+         if (!isset($_SESSION['start']))
+        {
         session_start();
+        $_SESSION['start']=True;
+        }
         include($path.'/../../templates/head.php');
         include($path . '/../../templates/connexion.php');
     }
     else {
+         if (!isset($_SESSION['start']))
+        {
         session_start();
+        $_SESSION['start']=True;
+        }
         include($path . '/../../../templates/head.php');
         include($path . '/../../../templates/connexion.php');
     }
     ?>
-    }
-  ?>
     <meta charset="UTF-8">
     <title>Page Login</title>
     <base href="http://localhost/plateformeRecrutement/back_office/">

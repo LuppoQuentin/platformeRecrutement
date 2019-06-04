@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
 <?php $path = dirname(__DIR__);
-session_start();
+if (!isset($_SESSION['start']))
+{
+    session_start();
+    $_SESSION['start']=True;
+}
 include($path . '/../templates/head.php');
 include($path . '/../templates/connexion.php');
 ?>

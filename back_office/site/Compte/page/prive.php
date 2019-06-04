@@ -2,7 +2,11 @@
 <html lang="fr">
 <head>
     <?php
-    session_start();
+    if (!isset($_SESSION['start']))
+    {
+        session_start();
+        $_SESSION['start']=True;
+    }
     include($path . '/../../templates/head.php');
     include($path . '/../../templates/connexion.php');
     ?>

@@ -50,7 +50,7 @@ class CompteManagement
         $q = $this->_db->prepare('UPDATE compte SET LOGIN = :login, MOT_DE_PASSE = :mdp, EMAIL = :mail, DATE_CREATION= :datecrea WHERE ID_COMPTE = :id');
         $q->bindValue(':id',$mCompte->getId());
         $q->bindValue(':login', $mCompte->getLogin());
-        $q->bindValue(':mdp',$mCompte->getMdp());
+        $q->bindValue(':mdp',crypt($mCompte->getMdp(),"CRYPT_SHA256"));
         $q->bindValue(':mail', $mCompte->getMail());
         $date = DateTime::createFromFormat("d/m/Y", $mCompte->getDate());
         $q->bindValue(':datecrea', $date->format('Y-m-d'));
