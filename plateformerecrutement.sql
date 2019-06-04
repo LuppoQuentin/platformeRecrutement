@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  jeu. 23 mai 2019 à 14:15
+-- Généré le :  mar. 04 juin 2019 à 13:57
 -- Version du serveur :  5.7.24
 -- Version de PHP :  7.2.14
 
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `admin` (
 --
 
 INSERT INTO `admin` (`ID`, `LOGIN`, `MDP`) VALUES
-(1, 'qluppo', '11!11!96Ql');
+(1, 'qluppo', 'CRtJ43EblZJ5A');
 
 -- --------------------------------------------------------
 
@@ -84,14 +84,15 @@ CREATE TABLE IF NOT EXISTS `compte` (
   `EMAIL` varchar(50) NOT NULL,
   `DATE_CREATION` date NOT NULL,
   PRIMARY KEY (`ID_COMPTE`)
-) ENGINE=MyISAM AUTO_INCREMENT=40 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=53 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `compte`
 --
 
 INSERT INTO `compte` (`ID_COMPTE`, `LOGIN`, `MOT_DE_PASSE`, `EMAIL`, `DATE_CREATION`) VALUES
-(38, 'qluppo', '11!11!96Ql', 'quentinluppo@orange.fr', '2019-05-23');
+(50, 'ters eq', 'CRa9puQ9TjZoY', 'quentinluppo@orange.fr', '2019-06-04'),
+(49, 'qluppo', 'CRtJ43EblZJ5A', 'quentinluppo@orange.fr', '2019-05-24');
 
 -- --------------------------------------------------------
 
@@ -120,7 +121,15 @@ CREATE TABLE IF NOT EXISTS `entreprise` (
   `VILLE` varchar(30) NOT NULL,
   `NOMBRE_EMPLOYE` int(8) NOT NULL,
   PRIMARY KEY (`ID_ENTREPRISE`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `entreprise`
+--
+
+INSERT INTO `entreprise` (`ID_ENTREPRISE`, `NOM`, `VILLE`, `NOMBRE_EMPLOYE`) VALUES
+(3, 'DCNS', 'LA GARDE', 10001),
+(4, 'DCNS', 'LA GARDE', 10000);
 
 -- --------------------------------------------------------
 
@@ -131,8 +140,16 @@ CREATE TABLE IF NOT EXISTS `entreprise` (
 DROP TABLE IF EXISTS `etudiant`;
 CREATE TABLE IF NOT EXISTS `etudiant` (
   `ID_ETUDIANT` int(11) NOT NULL AUTO_INCREMENT,
+  `ID_COMPTE` int(11) NOT NULL,
   PRIMARY KEY (`ID_ETUDIANT`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `etudiant`
+--
+
+INSERT INTO `etudiant` (`ID_ETUDIANT`, `ID_COMPTE`) VALUES
+(1, 49);
 
 -- --------------------------------------------------------
 
@@ -182,6 +199,7 @@ CREATE TABLE IF NOT EXISTS `recrutement` (
 DROP TABLE IF EXISTS `recruteur`;
 CREATE TABLE IF NOT EXISTS `recruteur` (
   `ID_RECRUTEUR` int(11) NOT NULL AUTO_INCREMENT,
+  `ID_COMPTE` int(11) NOT NULL,
   PRIMARY KEY (`ID_RECRUTEUR`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
