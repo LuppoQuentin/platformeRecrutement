@@ -28,7 +28,7 @@ if(!isset($errorInsert)) {
     $base->updateEntreprise($entreprise);
     unset($_SESSION['start']);
     // le header ici fait que la session n'est lus active apres
-    header('location:  ../../site/Entreprise/page/prive.php');
+    header('location:  ../../site/Entreprise/page/entreprise.php');
     exit();
 } else {
     $_POST['ID_ENTREPRISE']=$entreprise->getId();
