@@ -34,10 +34,20 @@ foreach ($verif as $key => $value){
 if(!isset($errorInsert)) {
     $base = new CompteManagement($db);
     $base->add($compte);
-
-
-
-
+    $id = $base->returnLastId();
+    if(isset($_POST['recruteur'])) {
+        include_once('../../class/Recruteur.php');
+        include_once('../../class/RecruteurManagement.php');
+        $datarecru = new RecruteurManagement($db);
+        $recruteur = new Recruteur($id);
+        $datarecru->add($recruteur);
+    } else {
+        include_once('../../class/Etudiant.php');
+        include_once('../../class/EtudiantManagement.php');
+        $dataetud = new EtudiantManagement($db);
+        $etudiant = new Etudiant($id);
+        $dataetud->add($etudiant);
+    }
 }
 include('../../site/Compte/page/prive.php');
 

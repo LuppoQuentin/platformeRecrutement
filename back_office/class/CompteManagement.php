@@ -26,7 +26,6 @@ class CompteManagement
         $q->bindValue(':mdp',crypt($mCompte->getMdp(),"CRYPT_SHA256"));
         $q->bindValue(':email', $mCompte->getMail());
         $q->bindValue(':datecrea', $mCompte->getDate());
-
         $q->execute();
     }
 
@@ -57,6 +56,10 @@ class CompteManagement
         $data = $q->execute();
     }
 
+    public function returnLastId() {
+        $q = $this->_db->lastInsertId();
+        return $q;
+    }
 
 
 }
