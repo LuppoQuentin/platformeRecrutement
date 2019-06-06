@@ -5,8 +5,8 @@ include('dbConnect.php');
 global $dbConnect;
 print_r($dbConnect);
 print_r($_POST);
-$request = $dbConnect->prepare('SELECT id FROM admin WHERE login = :login AND mdp = :mdp');
-$request->execute(array('login'=>$_POST['login'],'mdp'=>$_POST['mdp']));
+$request = $dbConnect->prepare('SELECT id FROM admin WHERE email = :email AND mdp = :mdp');
+$request->execute(array('email'=>$_POST['email'],'mdp'=>$_POST['mdp']));
 $result = $request->fetch();
 
 print_r($dbConnect);
