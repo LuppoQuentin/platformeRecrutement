@@ -54,12 +54,26 @@ $data = $request->execute();
 </table class="table">
     <body>
         <form method="post" action="./gestion/entreprise/insertEntreprise.php">
-            <table>
-                <tr><td>Nom : </td><td><input type="text" name="nom"/></td></tr>
-                <tr><td>Ville : </td><td><input name="ville"/></td><td></td></tr>
-                <tr><td>Nb_employe : </td><td><input type="text" name="nb_employe" /></td><td></td></tr>
-                <tr><td>Saisir tous les champs</td><td><button style="display: block;" type="submit" class="btn btn-primary" name="submit">Valider</button><td></tr>
-            </table>
+
+
+            <div class="form" >
+                <div class="form">
+                    <label for="email">Nom :</label>
+                    <input style="width: 200px;" type="text" class="form-control" id="nom" name="nom" aria-describedby="loginHelp" placeholder="Enter nom" value="">
+                </div>
+                <div class="form">
+                    <label for="login">Ville :</label>
+                    <input style="width: 200px;" type="text" class="form-control" name="ville" placeholder="Enter ville" value="">
+                </div>
+                <div class="form">
+                    <label for="login">Nombre employé :</label>
+                    <input style="width: 200px;" type="text" class="form-control" name="nb_employe" placeholder="Enter nombre d'employés" value="">
+                </div>
+                <div class="form">
+                    <td>Saisir tous les champs</td><td><button style="display: block;" type="submit" class="btn btn-primary" name="submit">Valider</button><td>
+                </div>
+            </div>
+
         </form>
         <form action="./site/menu.php" method="post">
             <button style="float:right ;margin-right:20px;" type="submit" class="btn btn-primary" name="Menu">Retour menu</button>

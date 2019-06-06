@@ -26,7 +26,6 @@ class CompteManagement
         $q->bindValue(':mdp',crypt($mCompte->getMdp(),"CRYPT_SHA256"));
         $q->bindValue(':email', $mCompte->getMail());
         $q->bindValue(':datecrea', $mCompte->getDate());
-
         $q->execute();
     }
 
@@ -55,6 +54,37 @@ class CompteManagement
         $date = DateTime::createFromFormat("d/m/Y", $mCompte->getDate());
         $q->bindValue(':datecrea', $date->format('Y-m-d'));
         $data = $q->execute();
+    }
+
+    public function returnLastId() {
+        $q = $this->_db->lastInsertId();
+        return $q;
+    }
+
+    public function verifMailExist($mMail) {
+        $q = $this->_db->prepare('SELECT COUNT(*) AS nb_entre FROM COMPTE WHERE EMAIL = :mail ');
+        $q->bindValue(':mail',$mMail);
+        $q->execute();
+        $bool = false;
+        while($data = $q->fetch()) {
+            if($data['nb_entre']>0) {
+                $bool = true;
+            }
+        }
+        return $bool;
+    }
+
+    public function verifLoginExist($mLogin) {
+        $q = $this->_db->prepare('SELECT COUNT(*) AS nb_entre FROM COMPTE WHERE LOGIN = :login ');
+        $q->bindValue(':login',$mLogin);
+        $q->execute();
+        $bool = false;
+        while($data = $q->fetch()) {
+            if($data['nb_entre']>0) {
+                $bool = true;
+            }
+        }
+        return $bool;
     }
 
 

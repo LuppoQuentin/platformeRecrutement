@@ -34,6 +34,7 @@ $data = $request->execute();
 				<th>Login</th>
 				<th>password</th>
 				<th>Date_creation</th>
+                <th>Type</th>
 			</tr>
 		</thead>
 	<tbody>
@@ -45,6 +46,14 @@ $data = $request->execute();
 		<td><?php echo $data['LOGIN']; ?></td>
 		<td><?php echo $data['MOT_DE_PASSE']; ?></td>
 		<td><?php echo $data['DATE_CREATION']; ?></td>
+        <?php
+        if(isset($errorInsert)) {
+            include($path.'/../gestion/compte/TypeManagement.php');
+        } else {
+            include($path.'/../../gestion/compte/TypeManagement.php');
+        }
+        ?>
+        <td><?php echo $data['TYPE']; ?></td>
 		<td>
 			<form method="post" action="./site/Compte/page/modifComptePage.php">
 				<input type="hidden" name="ID_COMPTE" value="<?php echo $data['ID_COMPTE']; ?>"><button style="display: block;" type="submit" class="btn btn-primary" name="modifer">Modifier</button>
