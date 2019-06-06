@@ -70,11 +70,19 @@ $data = $request->execute();
                     </div>
                     <div class="form">
                         <label for="login">Login :</label>
-                        <input style="width: 200px;" type="password" class="form-control" name="login" placeholder="Enter Login" value=""><td>Minimum 3 Caractère</td>
+                        <input style="width: 200px;" type="login" class="form-control" name="login" placeholder="Enter Login" value=""><td>Minimum 3 Caractère</td>
                     </div>
                     <div class="form">
                         <label for="login">Password :</label>
                         <input style="width: 200px;" type="password" class="form-control" name="password" placeholder="Enter Password" value=""><td>Minimum 8 Caractères (1maj, 1chiffre, 1caractere special)</td>
+                    </div>
+                    <div class="form">
+                        <label class="form-check-label" for="etudiant">Etudiant</label>
+                        <input type="checkbox" class="form-check-input" id="etudiant" name="etudiant" value="">
+                    </div>
+                    <div class="form">
+                        <label class="form-check-label" for="recruteur">Recruteur</label>
+                        <input type="checkbox" class="form-check-input" id="recruteur" name="recruteur" value="">
                     </div>
                     <div class="form">
                         <td>Saisir tous les champs</td><td><button style="display: block;" type="submit" class="btn btn-primary" name="submit">Valider</button><td>
