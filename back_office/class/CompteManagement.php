@@ -61,5 +61,32 @@ class CompteManagement
         return $q;
     }
 
+    public function verifMailExist($mMail) {
+        $q = $this->_db->prepare('SELECT COUNT(*) AS nb_entre FROM COMPTE WHERE EMAIL = :mail ');
+        $q->bindValue(':mail',$mMail);
+        $q->execute();
+        $bool = false;
+        while($data = $q->fetch()) {
+            if($data['nb_entre']>0) {
+                $bool = true;
+            }
+        }
+        return $bool;
+    }
+
+    public function verifLoginExist($mLogin) {
+        $q = $this->_db->prepare('SELECT COUNT(*) AS nb_entre FROM COMPTE WHERE LOGIN = :login ');
+        $q->bindValue(':login',$mLogin);
+        $q->execute();
+        $bool = false;
+        while($data = $q->fetch()) {
+            if($data['nb_entre']>0) {
+                $bool = true;
+            }
+        }
+        return $bool;
+    }
+
+
 
 }
