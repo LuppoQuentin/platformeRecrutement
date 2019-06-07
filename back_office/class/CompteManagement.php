@@ -36,14 +36,14 @@ class CompteManagement
     }
 
     public function getCompte($id, compte $newObject) {
-        $q = $this->_db->prepare('SELECT * FROM compte where ID_COMPTE =  :id');
-        $q->bindValue(':id',$id);
-        $data = $q->execute();
-        while($data = $q->fetch()) {
-             $newObject->getCompte($data);
-        }
-        return $newObject;
+    $q = $this->_db->prepare('SELECT * FROM compte where ID_COMPTE =  :id');
+    $q->bindValue(':id',$id);
+    $data = $q->execute();
+    while($data = $q->fetch()) {
+        $newObject->getCompte($data);
     }
+    return $newObject;
+}
 
     public function updateCompte(compte $mCompte) {
         $q = $this->_db->prepare('UPDATE compte SET LOGIN = :login, MOT_DE_PASSE = :mdp, EMAIL = :mail, DATE_CREATION= :datecrea WHERE ID_COMPTE = :id');

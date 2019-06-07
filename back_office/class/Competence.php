@@ -8,26 +8,39 @@
 
 class Competence
 {
-    private $idCompetennce;
-    private $nom;
+    private $idCompetence;
+    private $competence;
 
 
-    public function __construct($mNom)
+    public function __construct( $mCompetence)
     {
-        $this->nom=$mNom;
+        $this->competence=$mCompetence;
     }
 
-    public function getIdCompetence()
+     function getIdCompetence()
     {
-        return $this->idCompte;
+        return $this->idCompetence;
     }
 
-    public function getIdEtudiant(){
-        return $this->idRecruteur;
+    public function getCompetence(array $mCompetence){
+        $this->competence=$mCompetence['ID_COMPETENCE'];
     }
 
-    public function  getRecruteur(array $recruteur) {
-        $this->idRecruteur=$recruteur['ID_RECRUTEUR'];
-        $this->idCompte=$recruteur['ID_COMPTE'];
+    public function verifCompetence() {
+        if (strlen($this->competence) < 0) {
+            return false;
+        }
+
+        return true;
+    }
+
+    public function verifObject(){
+        $valid = array(
+            'competence' => "Problème avec la compétence."
+        );
+        if($this->verifCompetence()){
+            $valid['competence'] = 1;
+        }
+        return $valid;
     }
 }

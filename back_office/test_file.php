@@ -5,5 +5,5 @@
  * Date: 24/05/2019
  * Time: 16:05
  */
-$pwd="11!11!96Ql";
+$pwd="clement123";
 echo crypt($pwd,"CRYPT_SHA256");
