@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 04 juin 2019 à 13:57
+-- Généré le :  jeu. 06 juin 2019 à 13:18
 -- Version du serveur :  5.7.24
 -- Version de PHP :  7.2.14
 
@@ -84,15 +84,7 @@ CREATE TABLE IF NOT EXISTS `compte` (
   `EMAIL` varchar(50) NOT NULL,
   `DATE_CREATION` date NOT NULL,
   PRIMARY KEY (`ID_COMPTE`)
-) ENGINE=MyISAM AUTO_INCREMENT=53 DEFAULT CHARSET=latin1;
-
---
--- Déchargement des données de la table `compte`
---
-
-INSERT INTO `compte` (`ID_COMPTE`, `LOGIN`, `MOT_DE_PASSE`, `EMAIL`, `DATE_CREATION`) VALUES
-(50, 'ters eq', 'CRa9puQ9TjZoY', 'quentinluppo@orange.fr', '2019-06-04'),
-(49, 'qluppo', 'CRtJ43EblZJ5A', 'quentinluppo@orange.fr', '2019-05-24');
+) ENGINE=MyISAM AUTO_INCREMENT=108 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -128,8 +120,7 @@ CREATE TABLE IF NOT EXISTS `entreprise` (
 --
 
 INSERT INTO `entreprise` (`ID_ENTREPRISE`, `NOM`, `VILLE`, `NOMBRE_EMPLOYE`) VALUES
-(3, 'DCNS', 'LA GARDE', 10001),
-(4, 'DCNS', 'LA GARDE', 10000);
+(3, 'DCNS', 'LA GARDE', 10001);
 
 -- --------------------------------------------------------
 
@@ -142,14 +133,7 @@ CREATE TABLE IF NOT EXISTS `etudiant` (
   `ID_ETUDIANT` int(11) NOT NULL AUTO_INCREMENT,
   `ID_COMPTE` int(11) NOT NULL,
   PRIMARY KEY (`ID_ETUDIANT`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
-
---
--- Déchargement des données de la table `etudiant`
---
-
-INSERT INTO `etudiant` (`ID_ETUDIANT`, `ID_COMPTE`) VALUES
-(1, 49);
+) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -201,7 +185,7 @@ CREATE TABLE IF NOT EXISTS `recruteur` (
   `ID_RECRUTEUR` int(11) NOT NULL AUTO_INCREMENT,
   `ID_COMPTE` int(11) NOT NULL,
   PRIMARY KEY (`ID_RECRUTEUR`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
