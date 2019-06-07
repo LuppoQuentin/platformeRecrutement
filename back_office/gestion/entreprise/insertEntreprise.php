@@ -13,7 +13,7 @@ if (!isset($_SESSION['start']))
 include('../../templates/connexion.php');
 include('../../templates/config.php');
 include_once('../../class/Entreprise.php');
-include_once('l../../class/EntrepriseManagement.php');
+include_once('../../class/EntrepriseManagement.php');
 $entreprise = new entreprise($_POST['nom'],$_POST['ville'],$_POST['nb_employe']);
 $verif = $entreprise->verifObject();
 foreach ($verif as $key => $value){
