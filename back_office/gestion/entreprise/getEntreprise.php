@@ -7,7 +7,6 @@
  */
 
 $path = getcwd();
-$path = getcwd();
 if(isset($errorInsert)){
     include($path.'/../../templates/config.php');
     include_once($path.'/../../class/Entreprise.php');
